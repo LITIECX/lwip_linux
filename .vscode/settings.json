@@ -1,0 +1,13 @@
+{
+    "files.associations": {
+        "tcpecho.h": "c",
+        "opt.h": "c",
+        "errno.h": "c",
+        "err.h": "c",
+        "tcpip.h": "c",
+        "ip.h": "c",
+        "ip_addr.h": "c",
+        "default_netif.h": "c",
+        "type_traits": "c"
+    }
+}
