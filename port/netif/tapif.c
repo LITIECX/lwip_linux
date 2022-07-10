@@ -274,7 +274,11 @@ low_level_input(struct netif *netif)
     exit(1);
   }
   len = (u16_t)readlen;
-
+  for (size_t i = 0; i < len; i++)
+  {
+    printf("%#x",(unsigned char)buf[i]);
+  }
+  printf("len=%d\n",len);
   MIB2_STATS_NETIF_ADD(netif, ifinoctets, len);
 
 #if 0

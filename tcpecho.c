@@ -31,13 +31,15 @@ tcpecho_thread(void *arg)
       struct netbuf *buf;
       void *data;
       u16_t len;
-
       while ((err = netconn_recv(newconn, &buf)) == ERR_OK)
       {
-        printf("Recved\n");
         do
         {
           netbuf_data(buf, &data, &len);
+          for ( int i = 0; i < len; i++)
+          {
+            printf("%c",((char*)data)[i]);
+          }
           err = netconn_write(newconn, data, len, NETCONN_COPY);
           #if 0
                       if (err != ERR_OK) {

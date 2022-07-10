@@ -61,7 +61,7 @@ NETIF=$(LWIPPPRT)/netif/tapif.c \
 # core.so:
 # 	gcc $(CFLAGS)  -shared -fPIC -o core.so $(COREFILES) $(CORE4FILES)
 
-main:
+main:main.c default_netif.c tcpecho.c  $(COREFILES) $(CORE4FILES) $(APIFILES) $(NETIFFILES) $(NETIF)
 	gcc $(CFLAGS) -g -o main  main.c default_netif.c  \
 	tcpecho.c  $(COREFILES) $(CORE4FILES) $(APIFILES) $(NETIFFILES) $(NETIF) -lpthread 
 clean:
